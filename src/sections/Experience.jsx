@@ -23,12 +23,12 @@ const WorkExperience = () => {
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
               <Suspense fallback={<CanvasLoader />}>
-                <Developer position-y={-3} scale={3} animationName={animationName} />
+                <Developer position-y={-3} scale={3.25} animationName={animationName} />
               </Suspense>
             </Canvas>
           </div>
 
-          <div className="work-content">
+          <div className="work-content flex flex-col justify-center items-center">
             <div className="sm:py-10 py-5 sm:px-5 px-2.5">
               {workExperiences.map((item, index) => (
                 <div
@@ -39,7 +39,7 @@ const WorkExperience = () => {
                   className="work-content_container group">
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt="" />
+                      <img className="w-full h-full object-contain" src={item.icon} alt="" />
                     </div>
 
                     <div className="work-content_bar" />
@@ -56,6 +56,7 @@ const WorkExperience = () => {
               ))}
             </div>
           </div>
+          
         </div>
       </div>
     </section>
